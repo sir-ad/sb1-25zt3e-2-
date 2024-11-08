@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy-50: #f8fafc;
+    --color-navy-100: #f1f5f9;
+    --color-navy-200: #e2e8f0;
+    --color-navy-300: #cbd5e1;
+    --color-navy-400: #94a3b8;
+    --color-navy-500: #64748b;
+    --color-navy-600: #475569;
+    --color-navy-700: #334155;
+    --color-navy-800: #1e293b;
+    --color-navy-900: #0f172a;
+  }
+
+  body {
+    @apply text-navy-900 bg-navy-50;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-navy-600 hover:bg-navy-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-navy-500 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border-2 border-navy-200 rounded-lg focus:border-navy-600 focus:ring-0 transition-colors;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-navy-700 mb-1;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Grid background pattern */
+.bg-grid-white {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+/* Gradient text utilities */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r;
+}
+
+/* Custom transitions */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2;
+}
+
+/* Interactive card hover effects */
+.hover-card {
+  @apply transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Responsive padding utilities */
+.section-padding {
+  @apply py-12 md:py-16 lg:py-20;
+}
+
+/* Container utilities */
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
